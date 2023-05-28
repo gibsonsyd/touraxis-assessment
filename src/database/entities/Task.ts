@@ -3,6 +3,7 @@ import { TableNames } from "../../constants/TableNames";
 import { EntityBase } from "./EntityBase";
 import { User } from "./User";
 
+// The Task entity stored in mysql. It inherits from and extends EntityBase
 @Entity(TableNames.TASKS)
 export class Task extends EntityBase {
   

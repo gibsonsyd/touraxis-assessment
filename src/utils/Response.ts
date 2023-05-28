@@ -1,6 +1,6 @@
 import { Response } from "express"
 
-export class ResponseUtil {
+export class ResponseUtil {         // A standard response wrapper for any call's response
   static sendResponse<T>(
     res: Response,
     message: string,

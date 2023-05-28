@@ -7,6 +7,8 @@ import {
   } from "class-validator";
   import { Not } from "typeorm";
   import { AppDataSource } from "./../../database/Data-Source";
+
+  // This is not my own code. I got this off one of the articles. It assists with a database check for uniqueness before inserting a value into the db
   
   @ValidatorConstraint({ async: true })
   export class IsUniqueConstraint implements ValidatorConstraintInterface {

@@ -1,7 +1,6 @@
-import { hash } from "bcryptjs";
-import { BeforeInsert, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { TableNames } from "../../constants/TableNames";
+import { CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
+// Demonstrates inheritance in typescript
 export class EntityBase {
   @PrimaryGeneratedColumn()
   id: number;

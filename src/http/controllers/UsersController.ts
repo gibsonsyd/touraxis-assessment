@@ -7,6 +7,7 @@ import { Request, Response } from "express";
 import { CreateUserDTO } from "./../dtos/CreateUserDTO";
 import { UpdateUserDTO } from "./../dtos/UpdateUserDTO";
 
+// Controller for /api/Users endpoints
 export class UsersController {
 
     // Return a list of users

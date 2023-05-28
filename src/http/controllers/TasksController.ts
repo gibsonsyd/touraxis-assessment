@@ -8,6 +8,7 @@ import { UpdateTaskDTO } from "./../dtos/UpdateTaskDTO";
 import { Task } from "@/database/entities/Task";
 import { TaskStatuses } from "@/constants/TaskStatuses";
 
+// Controller for /api/Users/x/tasks endpoints
 export class TasksController {
 
     // return a list of tasks for a specific user

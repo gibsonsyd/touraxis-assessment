@@ -1,9 +1,9 @@
-import { hash } from "bcryptjs";
-import { BeforeInsert, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, Entity, OneToMany } from "typeorm";
 import { TableNames } from "../../constants/TableNames";
 import { EntityBase } from "./EntityBase";
 import { Task } from "./Task";
 
+// The User entity stored in mysql. It inherits from and extends EntityBase
 @Entity(TableNames.USERS)
 export class User extends EntityBase {
   

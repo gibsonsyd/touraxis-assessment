@@ -4,27 +4,28 @@ import express from "express";
 
 const tasksController = new TasksController();
 
-const router = express.Router({mergeParams: true});
+// determine routing for calls to /api/user/x/tasks/...
+const router = express.Router({mergeParams: true});     // allow retrieval of query params in parent route (/api/users) 
 
-// get user's tasks
+// [/api/users/1/tasks]
 router.get("/", ErrorHandler.catchErrors(tasksController.getUserTasks));
 
-// get task detail
+// [/api/users/1/tasks/1]
 router.get("/:task_id", ErrorHandler.catchErrors(tasksController.getTaskInfo));
 
-// create task for a user
+// [/api/users/1/tasks]
 router.post(
   "/",
   ErrorHandler.catchErrors(tasksController.create)
 );
 
-// update user task
+// [/api/users/1/tasks/1]
 router.put(
   "/:task_id",
   ErrorHandler.catchErrors(tasksController.update)
 );
 
-// delete user task
+// [/api/users/1/tasks/1]
 router.delete(
   "/:task_id",
   ErrorHandler.catchErrors(tasksController.delete)

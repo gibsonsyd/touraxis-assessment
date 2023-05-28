@@ -7,6 +7,7 @@ interface PaginationInfo {
     hasPrevious: boolean;
   }
   
+  // Allows us to return paginated results from mysql. Lifted from article.
   export class Paginator {
     static async paginate(queryBuilder, req) {
       let page = Number(req.query.page) || 1;

@@ -2,6 +2,7 @@ import { IsNotEmpty, IsNumber, MaxLength, MinLength } from "class-validator";
 import { Task } from "../../database/entities/Task";
 import { IsUnique } from "../validators/IsUniqueValidator";
 
+// called when creating a task, this is the incoming request object
 export class CreateTaskDTO {
 
     id?: number;

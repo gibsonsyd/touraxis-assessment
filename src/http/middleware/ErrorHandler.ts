@@ -3,6 +3,7 @@ import { NextFunction, Request, Response } from "express";
 import { EntityNotFoundError } from "typeorm";
 import { ResponseUtil } from "../../utils/Response";
 
+// As with the validator this is a handler I got from an article that assists with simplifying the error handling pipeline.
 export class ErrorHandler {
   static catchErrors(fn) {
     return (req: Request, res: Response, next: NextFunction) => {

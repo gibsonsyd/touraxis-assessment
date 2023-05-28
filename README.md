@@ -16,6 +16,9 @@ Please make sure you are running a recent version of Docker. Docker desktop is a
 4. run: 'yarn typeorm migration:run' in the docker container bash to run the created migrations before running the project.
 5. run: 'yarn dev' to start the development server in docker. When started you can browse to 'http://localhost:3000/api/users' to interact with the web api.
 
+### How To Test
+Use the attached postman json collection ['assessment.postman_collection.json'] to call the api .Docker will expose port 3000.
+
 ### The project implements no security best practices:
 I did not implement any security checks against users calling the api endpoints. This is clearly a shortcoming that can and should be addressed in production environments.
 The .env file is checked into source control for your convenience, this should be avoided in production environments. 
@@ -51,5 +54,17 @@ Results are returned in a JSON object that looks as follows:
     "paginationInfo": {...}
 }
 
-## How To Test
-Use the attached postman json collection ['assessment.postman_collection.json'] to call the api .Docker will expose port 3000.
+
+## Resources used while researching a solution
+
+https://expressjs.com/en/starter/examples.html
+
+https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786
+
+https://www.freecodecamp.org/news/schedule-a-job-in-node-with-nodecron/
+
+https://www.npmjs.com/package/mysql
+
+https://www.npmjs.com/package/mysql-migrations
+
+https://www.toptal.com/express-js/nodejs-typescript-rest-api-pt-1
