@@ -1,10 +1,11 @@
-import { AppDataSource } from "@/database/data-source";
+import { AppDataSource } from "./../../database/Data-Source";
 import { User } from "./../../database/entities/User";
 import { Paginator } from "@/database/Paginator";
 import { ResponseUtil } from "@/utils/Response";
 import { validateOrReject } from "class-validator";
 import { Request, Response } from "express";
-import { CreateUserDTO, UpdateUserDTO } from "../dtos/UserDTO";
+import { CreateUserDTO } from "./../dtos/CreateUserDTO";
+import { UpdateUserDTO } from "./../dtos/UpdateUserDTO";
 
 export class UsersController {
 
