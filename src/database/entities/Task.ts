@@ -34,4 +34,17 @@ export class Task extends EntityBase {
 
     return task;
   }
+
+  toObject(): Task {
+    return {
+      id: this.id,
+      name: this.name,
+      description: this.description,
+      execute_on: this.execute_on,
+      created_on: this.created_on,
+      updated_on: this.updated_on,
+      user: this.user.toObject()
+    } as Task;
+  }
+
 }
