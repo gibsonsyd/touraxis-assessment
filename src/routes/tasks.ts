@@ -14,19 +14,19 @@ router.get("/:task_id", ErrorHandler.catchErrors(tasksController.getTaskInfo));
 
 // create task for a user
 router.post(
-  "/tasks",
+  "/",
   ErrorHandler.catchErrors(tasksController.create)
 );
 
 // update user task
 router.put(
-  "/tasks/:task_id",
+  "/:task_id",
   ErrorHandler.catchErrors(tasksController.update)
 );
 
 // delete user task
 router.delete(
-  "/tasks/:task_id",
+  "/:task_id",
   ErrorHandler.catchErrors(tasksController.delete)
 );
 
