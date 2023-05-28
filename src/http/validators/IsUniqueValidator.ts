@@ -6,7 +6,7 @@ import {
     ValidatorOptions,
   } from "class-validator";
   import { Not } from "typeorm";
-  import { AppDataSource } from "./../../database/data-source";
+  import { AppDataSource } from "./../../database/Data-Source";
   
   @ValidatorConstraint({ async: true })
   export class IsUniqueConstraint implements ValidatorConstraintInterface {
@@ -20,8 +20,6 @@ import {
       const repository = AppDataSource.getRepository(entity);
       const isUpdate: boolean = args.object["id"] !== undefined;
       let count = 0;
-  
-      console.log(isUpdate);
   
       if (!isUpdate) {
         count = await repository.count({ where: { [field]: value } });

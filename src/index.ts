@@ -1,4 +1,4 @@
-import { AppDataSource } from "@/database/data-source";
+import { AppDataSource } from "./database/Data-Source";
 import * as dotenv from "dotenv";
 import "reflect-metadata";
 
