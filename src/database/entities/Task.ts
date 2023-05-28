@@ -13,6 +13,9 @@ export class Task extends EntityBase {
   description: string;
 
   @Column()
+  status: string;
+
+  @Column()
   execute_on: Date;
 
   @ManyToOne((type) => User, (user) => user.tasks, { eager: true })
@@ -31,6 +34,7 @@ export class Task extends EntityBase {
     task.created_on = this.created_on;
     task.updated_on = this.updated_on;
     task.user = this.user.toObject();
+    task.status = this.status;
 
     return task;
   }
@@ -43,7 +47,8 @@ export class Task extends EntityBase {
       execute_on: this.execute_on,
       created_on: this.created_on,
       updated_on: this.updated_on,
-      user: this.user.toObject()
+      user: this.user.toObject(),
+      status: this.status
     } as Task;
   }
 

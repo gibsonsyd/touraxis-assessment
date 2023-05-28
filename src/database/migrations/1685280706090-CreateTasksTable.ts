@@ -51,6 +51,13 @@ export class CreateTasksTable1685280706090 implements MigrationInterface {
                 length: "255",
                 isNullable: false,
               },
+              {
+                name: "status",
+                type: "varchar",
+                length: "20",
+                isNullable: false,
+                default: "pending",
+              },
               
             ],
           }),

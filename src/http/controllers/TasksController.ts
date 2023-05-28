@@ -6,6 +6,7 @@ import { Request, Response } from "express";
 import { CreateTaskDTO } from "./../dtos/CreateTaskDTO";
 import { UpdateTaskDTO } from "./../dtos/UpdateTaskDTO";
 import { Task } from "@/database/entities/Task";
+import { TaskStatuses } from "@/constants/TaskStatuses";
 
 export class TasksController {
 
@@ -56,6 +57,7 @@ export class TasksController {
         const task = repo.create(dto);
         //We're not parsing date_time > execute_on with Object.assign
         task.execute_on = dto.date_time;
+        task.status = TaskStatuses.PENDING; // set via default value, being explicit here.
 
         await repo.save(task);
 
@@ -78,10 +80,12 @@ export class TasksController {
 
         const task = await repo.findOneByOrFail({
             id: Number(task_id),
-            userId: Number(user_id)
-        });
+            userId: Number(user_id),
+            status: TaskStatuses.PENDING
+        }); // fail update if task status is anything but pending.
 
         repo.merge(task, taskData);
+
         await repo.save(task);
         return ResponseUtil.sendResponse(res, "Successfully updated the user's task", task.toObject());
     }

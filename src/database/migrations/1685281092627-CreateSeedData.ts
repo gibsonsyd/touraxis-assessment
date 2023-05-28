@@ -15,10 +15,10 @@ export class CreateSeedData1685281092627 implements MigrationInterface {
       
           await queryRunner.query(
             `
-                INSERT IGNORE INTO ${TableNames.TASKS} (id, name, description, execute_on, userId) 
+                INSERT IGNORE INTO ${TableNames.TASKS} (id, name, description, execute_on, status, userId) 
                 VALUES
-                (1, 'Brunch appointment', 'You have a brunch appointment with your father!', DATE_ADD(NOW(), INTERVAL 1 MINUTE), 1),
-                (2, 'Walk the dog', 'Jess needs some exercise!', DATE_ADD(NOW(), INTERVAL 4 MINUTE), 2)
+                (1, 'Brunch appointment', 'You have a brunch appointment with your father!', DATE_ADD(NOW(), INTERVAL 1 MINUTE), 'pending', 1),
+                (2, 'Walk the dog', 'Jess needs some exercise!', DATE_ADD(NOW(), INTERVAL 4 MINUTE), 'pending', 2)
             `
           );
     }
