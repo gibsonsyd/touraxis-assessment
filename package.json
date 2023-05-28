@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "TourAxis node web api project assessment",
   "author": "Pieter Theron",
-  "main": "index.js",
+  "main": "index.ts",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@types/express": "^4.17.15",
+    "@types/node-cron": "^3.0.7",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",
     "class-validator": "^0.14.0",
@@ -26,6 +27,7 @@
     "jsonwebtoken": "^9.0.0",
     "multer": "1.4.3",
     "mysql2": "^3.0.1",
+    "node-cron": "^3.0.2",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.11"
   },
