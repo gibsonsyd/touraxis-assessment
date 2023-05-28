@@ -54,6 +54,9 @@ Results are returned in a JSON object that looks as follows:
     "paginationInfo": {...}
 }
 
+### Bonus Task
+I used node-cron to create a cron service that fires every minute looking for expired tasks to mark complete. I took the liberty of renaming your variable from next_execute_date_time to execute_on in my database. Please see /src/cron for more detail on this task
+
 
 ## Resources used while researching a solution
 
